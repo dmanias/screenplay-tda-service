@@ -1,7 +1,6 @@
 package com.cleanarchitecture.application.dto;
 
 import lombok.Value;
-import com.cleanarchitecture.domain.entity.User;
 
 @Value
 public class UserDto {

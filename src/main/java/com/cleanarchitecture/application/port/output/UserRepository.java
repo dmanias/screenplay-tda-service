@@ -1,6 +1,5 @@
 package com.cleanarchitecture.application.port.output;
 
-import com.cleanarchitecture.domain.entity.User;
 import java.util.Optional;
 
 public interface UserRepository {

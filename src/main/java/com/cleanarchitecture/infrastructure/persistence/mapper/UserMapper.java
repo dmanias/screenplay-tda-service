@@ -1,6 +1,5 @@
 package com.cleanarchitecture.infrastructure.persistence.mapper;
 
-import com.cleanarchitecture.domain.entity.User;
 import com.cleanarchitecture.infrastructure.persistence.entity.UserJpaEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

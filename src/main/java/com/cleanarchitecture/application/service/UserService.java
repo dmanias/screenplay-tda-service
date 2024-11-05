@@ -5,7 +5,6 @@ import com.cleanarchitecture.application.port.output.EventPublisher;
 import com.cleanarchitecture.application.port.output.UserRepository;
 import com.cleanarchitecture.application.dto.CreateUserCommand;
 import com.cleanarchitecture.application.dto.UserDto;
-import com.cleanarchitecture.domain.entity.User;
 import com.cleanarchitecture.domain.event.UserCreatedEvent;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

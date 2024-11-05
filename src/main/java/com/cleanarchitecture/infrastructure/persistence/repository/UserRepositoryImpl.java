@@ -1,7 +1,6 @@
 package com.cleanarchitecture.infrastructure.persistence.repository;
 
 import com.cleanarchitecture.application.port.output.UserRepository;
-import com.cleanarchitecture.domain.entity.User;
 import com.cleanarchitecture.infrastructure.persistence.mapper.UserMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;

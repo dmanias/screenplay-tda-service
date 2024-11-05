@@ -1,7 +1,6 @@
 package com.cleanarchitecture.domain.event;
 
 import lombok.Getter;
-import com.cleanarchitecture.domain.entity.User;
 
 @Getter
 public class UserCreatedEvent extends DomainEvent {
