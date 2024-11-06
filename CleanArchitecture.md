@@ -29,36 +29,58 @@ This service implements TDA (Topological Data Analysis) for screenplay evaluatio
 
 \## 🏗 Architecture
 
-This project follows Clean Architecture with four main layers:
+The architecture follows Clean Architecture principles with dependencies pointing inward:
+
+```
+┌──────────────────────────────────────┐
+│ Presentation Layer (Interface)       │
+│  ┌──────────────────────────────┐   │
+│  │ Infrastructure Layer         │   │
+│  │  ┌──────────────────────┐   │   │
+│  │  │ Application Layer    │   │   │
+│  │  │  ┌──────────────┐   │   │   │
+│  │  │  │ Domain Layer │   │   │   │
+│  │  │  └──────────────┘   │   │   │
+│  │  └──────────────────────┘   │   │
+│  └──────────────────────────────┘   │
+└──────────────────────────────────────┘
+```
 
 \### 1. Domain Layer (Enterprise Business Rules)
 - Location: `src/main/java/com/cleanarchitecture/domain`
-- Contains:
-  - Core entities
-  - Value objects
-  - Port interfaces
-  - Domain exceptions
+- Purpose: Contains core business logic and rules
+- Components:
+   - Core entities (independent of frameworks)
+   - Value objects (immutable business objects)
+   - Port interfaces (for dependency inversion)
+   - Domain exceptions
 
 \### 2. Application Layer (Application Business Rules)
 - Location: `src/main/java/com/cleanarchitecture/application`
-- Contains:
-  - Framework implementations
-  - Application services
-  - DTOs for internal use
+- Purpose: Orchestrates the flow of data and business rules
+- Components:
+   - Framework implementations
+   - Application services
+   - Use case coordinators
+   - DTOs for internal use
 
 \### 3. Infrastructure Layer (Frameworks & Drivers)
 - Location: `src/main/java/com/cleanarchitecture/infrastructure`
-- Contains:
-  - JavaPlex integration
-  - External service implementations
-  - Mathematical computation utilities
+- Purpose: Implements interfaces defined in domain layer
+- Components:
+   - JavaPlex integration
+   - Repository implementations
+   - External service implementations
+   - Framework configurations
 
 \### 4. Presentation Layer (Interface Adapters)
 - Location: `src/main/java/com/cleanarchitecture/presentation`
-- Contains:
-  - REST controllers
-  - Request/Response models
-  - API documentation
+- Purpose: Handles external communication
+- Components:
+   - REST controllers
+   - Request/Response models
+   - API documentation
+   - HTTP-specific logic
 
 \## 📁 Project Structure
 
@@ -69,24 +91,24 @@ src/
 │   │   └── com/
 │   │       └── cleanarchitecture/
 │   │           ├── domain/
-│   │           │   ├── entity/
-│   │           │   ├── valueobject/
-│   │           │   ├── port/
-│   │           │   │   ├── input/
-│   │           │   │   └── output/
-│   │           │   └── exception/
+│   │           │   ├── entity/      # Business entities
+│   │           │   ├── valueobject/ # Immutable value objects
+│   │           │   ├── port/        # Interfaces for external deps
+│   │           │   │   ├── input/   # Use case interfaces
+│   │           │   │   └── output/  # Repository/Service interfaces
+│   │           │   └── exception/   # Domain-specific exceptions
 │   │           ├── application/
-│   │           │   ├── service/
-│   │           │   └── dto/
+│   │           │   ├── service/     # Use case implementations
+│   │           │   └── dto/         # Data Transfer Objects
 │   │           ├── infrastructure/
-│   │           │   ├── persistence/
-│   │           │   └── config/
+│   │           │   ├── persistence/ # Repository implementations
+│   │           │   └── config/      # Framework configurations
 │   │           └── presentation/
 │   │               └── api/
 │   │                   └── rest/
-│   │                       ├── controller/
-│   │                       ├── request/
-│   │                       └── response/
+│   │                       ├── controller/ # REST controllers
+│   │                       ├── request/    # Request DTOs
+│   │                       └── response/   # Response DTOs
 │   └── resources/
 │       └── application.yml
 └── test/
@@ -122,18 +144,18 @@ Based on Papia et al. (2023):
 \## 🛠 Technologies
 
 - **Core**:
-  - Java 23
-  - Spring Boot 3.3.5
-  - Gradle 8.x
+   - Java 23
+   - Spring Boot 3.3.5
+   - Gradle 8.x
 
 - **Mathematical Analysis**:
-  - JavaPlex (for TDA computations)
-  - Apache Commons Math
+   - JavaPlex (for TDA computations)
+   - Apache Commons Math
 
 - **Tools**:
-  - MapStruct 1.5.5.Final (for object mapping)
-  - Lombok (for boilerplate reduction)
-  - JUnit 5 (for testing)
+   - MapStruct 1.5.5.Final (for object mapping)
+   - Lombok (for boilerplate reduction)
+   - JUnit 5 (for testing)
 
 \## 🚀 Getting Started
 
@@ -174,11 +196,28 @@ http://localhost:8080/api/v1/tda
 
 \## 💻 Development
 
-\### Layer Organization
-- Domain Layer: Core business logic
-- Application Layer: Use case implementations
-- Infrastructure Layer: External integrations
-- Presentation Layer: API endpoints
+\### Dependencies Flow
+The dependencies flow inward:
+```
+Controller → UseCase ← RepositoryImpl
+     ↓         ↓            ↓
+ Request → Command →      Entity
+     ↓         ↓            ↑
+Response ← DTO    ← Repository
+```
+
+\### Benefits
+1. **Independence of Frameworks**
+   - Business logic isn't tied to external libraries
+   - Easy to change mathematical computation tools
+
+2. **Testability**
+   - Business rules can be tested without frameworks
+   - Easy to mock dependencies
+
+3. **Maintainability**
+   - Clear separation of concerns
+   - Protected from external changes
 
 \## 🧪 Testing
 

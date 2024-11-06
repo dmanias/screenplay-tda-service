@@ -1,4 +1,4 @@
-package com.cleanarchitecture.application.port.input;
+package com.cleanarchitecture.domain.port.input;
 
 import com.cleanarchitecture.application.dto.UserDto;
 import com.cleanarchitecture.application.dto.CreateUserCommand;

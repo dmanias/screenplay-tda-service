@@ -2,7 +2,7 @@ package com.cleanarchitecture.presentation.api.rest.controller;
 
 import com.cleanarchitecture.application.dto.CreateUserCommand;
 import com.cleanarchitecture.application.dto.UserDto;
-import com.cleanarchitecture.application.port.input.CreateUserUseCase;
+import com.cleanarchitecture.domain.port.input.CreateUserUseCase;
 import com.cleanarchitecture.presentation.api.rest.request.CreateUserRequest;
 import com.cleanarchitecture.presentation.api.rest.response.ApiResponse;
 import jakarta.validation.Valid;

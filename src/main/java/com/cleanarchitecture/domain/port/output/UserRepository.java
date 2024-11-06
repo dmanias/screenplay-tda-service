@@ -1,4 +1,4 @@
-package com.cleanarchitecture.application.port.output;
+package com.cleanarchitecture.domain.port.output;
 
 import java.util.Optional;
 

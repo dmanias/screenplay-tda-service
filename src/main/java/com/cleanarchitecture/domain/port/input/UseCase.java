@@ -1,4 +1,4 @@
-package com.cleanarchitecture.application.port.input;
+package com.cleanarchitecture.domain.port.input;
 
 import java.lang.annotation.*;
 

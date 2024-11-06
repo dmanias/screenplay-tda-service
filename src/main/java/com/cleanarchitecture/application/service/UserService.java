@@ -1,8 +1,8 @@
 package com.cleanarchitecture.application.service;
 
-import com.cleanarchitecture.application.port.input.CreateUserUseCase;
-import com.cleanarchitecture.application.port.output.EventPublisher;
-import com.cleanarchitecture.application.port.output.UserRepository;
+import com.cleanarchitecture.domain.port.input.CreateUserUseCase;
+import com.cleanarchitecture.domain.port.output.EventPublisher;
+import com.cleanarchitecture.domain.port.output.UserRepository;
 import com.cleanarchitecture.application.dto.CreateUserCommand;
 import com.cleanarchitecture.application.dto.UserDto;
 import com.cleanarchitecture.domain.event.UserCreatedEvent;

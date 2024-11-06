@@ -4,18 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9471666-c581-4d51-b7ac-a6e672283e25" name="Changes" comment="Initial commit. structure and readmes">
-      <change afterPath="$PROJECT_DIR$/Description.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/CreativeMetrics.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/Dialogue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/PatternMetrics.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/PersistenceDiagram.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/Point.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/Scene.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/Screenplay.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/ScreenplayMetrics.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/TopologicalFeatures.java" afterDir="false" />
+    <list default="true" id="f9471666-c581-4d51-b7ac-a6e672283e25" name="Changes" comment="Create entities">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLEANARCHITECTURE.md" beforeDir="false" afterPath="$PROJECT_DIR$/CleanArchitecture.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/application/port/input/CreateUserUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/port/input/CreateUserUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/application/port/input/UseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/port/input/UseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/application/port/output/EventPublisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/port/output/EventPublisher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/application/port/output/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/port/output/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/application/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/application/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/infrastructure/messaging/SpringEventsPublisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/infrastructure/messaging/SpringEventsPublisher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/infrastructure/persistence/repository/UserRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/infrastructure/persistence/repository/UserRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/presentation/api/rest/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/presentation/api/rest/controller/UserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,12 +73,12 @@
     &quot;assignee&quot;: &quot;dmanias&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/dmanias/screenplay-tda-service.git",
-    "accountId": "9105244d-c9d4-4b43-af2e-66f67815c340"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/dmanias/screenplay-tda-service.git&quot;,
+    &quot;accountId&quot;: &quot;9105244d-c9d4-4b43-af2e-66f67815c340&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -126,11 +126,20 @@
       <option name="project" value="LOCAL" />
       <updated>1730820688178</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Create entities">
+      <option name="closed" value="true" />
+      <created>1730837239608</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1730837239608</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit. structure and readmes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit. structure and readmes" />
+    <MESSAGE value="Create entities" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create entities" />
   </component>
 </project>
