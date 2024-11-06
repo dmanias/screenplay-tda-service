@@ -1,31 +1,30 @@
-\# TDA Analysis Service
+\# Clean Architecture Template
 
-A Spring Boot microservice implementing Topological Data Analysis for screenplay evaluation using Clean Architecture principles.
+A Spring Boot project template following Clean Architecture principles.
 
 \## 📋 Table of Contents
 - [Overview](#overview)
 - [Architecture](#architecture)
 - [Project Structure](#project-structure)
-- [Theoretical Foundation](#theoretical-foundation)
 - [Technologies](#technologies)
 - [Getting Started](#getting-started)
 - [API Documentation](#api-documentation)
 - [Development](#development)
 - [Testing](#testing)
+- [Contributing](#contributing)
+- [License](#license)
 
 \## 🎯 Overview
 
-This service implements TDA (Topological Data Analysis) for screenplay evaluation using three core frameworks:
-- Modal Logic Framework for creative analysis
-- Topological Analysis Framework for feature extraction
-- Pattern Analysis Framework for human-AI pattern differentiation
+This project is a template for building Spring Boot applications following Clean Architecture principles, focusing on separation of concerns and maintainability.
 
 \### Key Features
 - Clean Architecture implementation
-- Mathematical analysis of screenplay structure
-- Pattern recognition for AI/human content
-- Creative process validation
+- Domain-Driven Design (DDD) principles
+- API documentation with OpenAPI (Swagger)
 - Comprehensive test coverage
+- Gradle build system
+- Java 23 support
 
 \## 🏗 Architecture
 
@@ -49,38 +48,39 @@ The architecture follows Clean Architecture principles with dependencies pointin
 \### 1. Domain Layer (Enterprise Business Rules)
 - Location: `src/main/java/com/cleanarchitecture/domain`
 - Purpose: Contains core business logic and rules
-- Components:
-   - Core entities (independent of frameworks)
-   - Value objects (immutable business objects)
+- Contains:
+   - Business entities
+   - Value objects
+   - Domain events
+   - Domain exceptions
    - Port interfaces (for dependency inversion)
+      - Input ports (use case interfaces)
+      - Output ports (repository/service interfaces)
    - Domain exceptions
 
 \### 2. Application Layer (Application Business Rules)
 - Location: `src/main/java/com/cleanarchitecture/application`
 - Purpose: Orchestrates the flow of data and business rules
-- Components:
-   - Framework implementations
+- Contains:
+   - Use case implementations
    - Application services
-   - Use case coordinators
    - DTOs for internal use
 
 \### 3. Infrastructure Layer (Frameworks & Drivers)
 - Location: `src/main/java/com/cleanarchitecture/infrastructure`
-- Purpose: Implements interfaces defined in domain layer
-- Components:
-   - JavaPlex integration
+- Contains:
    - Repository implementations
-   - External service implementations
-   - Framework configurations
+   - External service integrations
+   - Security configurations
+   - Database configurations
 
 \### 4. Presentation Layer (Interface Adapters)
 - Location: `src/main/java/com/cleanarchitecture/presentation`
-- Purpose: Handles external communication
-- Components:
+- Contains:
    - REST controllers
    - Request/Response models
    - API documentation
-   - HTTP-specific logic
+   - Exception handlers
 
 \## 📁 Project Structure
 
@@ -91,26 +91,30 @@ src/
 │   │   └── com/
 │   │       └── cleanarchitecture/
 │   │           ├── domain/
-│   │           │   ├── entity/      # Business entities
-│   │           │   ├── valueobject/ # Immutable value objects
-│   │           │   ├── port/        # Interfaces for external deps
-│   │           │   │   ├── input/   # Use case interfaces
-│   │           │   │   └── output/  # Repository/Service interfaces
-│   │           │   └── exception/   # Domain-specific exceptions
+│   │           │   ├── entity/        # Business entities
+│   │           │   ├── valueobject/   # Immutable value objects
+│   │           │   ├── event/         # Domain events
+│   │           │   ├── port/          # Interfaces for external deps
+│   │           │   │   ├── input/     # Use case interfaces
+│   │           │   │   └── output/    # Repository/Service interfaces
+│   │           │   └── exception/     # Domain-specific exceptions
 │   │           ├── application/
-│   │           │   ├── service/     # Use case implementations
-│   │           │   └── dto/         # Data Transfer Objects
+│   │           │   ├── service/       # Use case implementations
+│   │           │   └── dto/           # Data Transfer Objects
 │   │           ├── infrastructure/
-│   │           │   ├── persistence/ # Repository implementations
-│   │           │   └── config/      # Framework configurations
+│   │           │   ├── persistence/   # Repository implementations
+│   │           │   ├── config/        # Framework configurations
+│   │           │   └── security/      # Security configurations
 │   │           └── presentation/
 │   │               └── api/
 │   │                   └── rest/
-│   │                       ├── controller/ # REST controllers
-│   │                       ├── request/    # Request DTOs
-│   │                       └── response/   # Response DTOs
+│   │                       ├── controller/  # REST controllers
+│   │                       ├── request/     # Request DTOs
+│   │                       └── response/    # Response DTOs
 │   └── resources/
-│       └── application.yml
+│       ├── application.yml
+│       ├── application-dev.yml
+│       └── application-prod.yml
 └── test/
     └── java/
         └── com/
@@ -121,26 +125,6 @@ src/
                 └── presentation/
 ```
 
-\## 🧮 Theoretical Foundation
-
-\### Modal Logic Framework
-Based on research by Farooq Khan et al. (2024):
-- Creative Potential: ◇(A ∧ C)
-- Human Creativity Foundation: □(H → ◇C)
-- Collaborative Creation: ◇(A ∧ H ∧ C)
-
-\### Topological Analysis Framework
-Following Kushnareva et al. (2021):
-- Feature Extraction: F: Text → R^n
-- Persistence Diagram: PH(text) = {(b_i, d_i)}
-- Quality Metrics: Q(text) = (β₀, β₁, β₂, W)
-
-\### Pattern Analysis Framework
-Based on Papia et al. (2023):
-- Human patterns: More varied topological structures
-- AI patterns: More regular and predictable patterns
-- Hybrid scoring: Balanced measure of collaboration
-
 \## 🛠 Technologies
 
 - **Core**:
@@ -148,9 +132,13 @@ Based on Papia et al. (2023):
    - Spring Boot 3.3.5
    - Gradle 8.x
 
-- **Mathematical Analysis**:
-   - JavaPlex (for TDA computations)
-   - Apache Commons Math
+- **Documentation**:
+   - SpringDoc OpenAPI UI 2.3.0
+   - Swagger UI
+
+- **Persistence**:
+   - Spring Data JPA
+   - H2 Database (for development)
 
 - **Tools**:
    - MapStruct 1.5.5.Final (for object mapping)
@@ -165,6 +153,12 @@ Based on Papia et al. (2023):
 
 \### Building the Project
 ```bash
+# Clone the repository
+git clone https://github.com/yourusername/clean-architecture-template.git
+
+# Navigate to the project directory
+cd clean-architecture-template
+
 # Build the project
 ./gradlew build
 
@@ -173,51 +167,60 @@ Based on Papia et al. (2023):
 ```
 
 \### Configuration
-Configure the service in `application.yml`:
-```yaml
-tda:
-  analysis:
-    threshold: 0.7
-    bettiNumbers: 3
-    maxDimension: 2
-```
+The application can be configured using the following files:
+- `application.yml`: Default configuration
+- `application-dev.yml`: Development configuration
+- `application-prod.yml`: Production configuration
 
 \## 📖 API Documentation
 
-\### Base URL
-```
-http://localhost:8080/api/v1/tda
-```
-
-\### Endpoints
-- POST /analyze - Analyze screenplay
-- GET /metrics/{id} - Get analysis results
-- GET /health - Service health check
+OpenAPI documentation is available at:
+- Swagger UI: http://localhost:8080/swagger-ui.html
+- API Docs: http://localhost:8080/api-docs
 
 \## 💻 Development
 
+\### Code Style
+This project uses:
+- EditorConfig for consistent coding style
+- Google Java Format
+- Checkstyle for code quality enforcement
+
+\### Mapper Generation
+MapStruct is used for object mapping. Mappers are generated during compilation:
+```bash
+./gradlew clean build
+```
+
 \### Dependencies Flow
-The dependencies flow inward:
+The dependencies flow inward, following DIP:
 ```
-Controller → UseCase ← RepositoryImpl
-     ↓         ↓            ↓
- Request → Command →      Entity
-     ↓         ↓            ↑
-Response ← DTO    ← Repository
+Controller → Domain Port ← Infrastructure Implementation
+     ↓          ↓                 ↓
+ Request → Application Service → Entity
+     ↓          ↓                 ↑
+Response ← DTO   ← Domain Port Interface
 ```
 
-\### Benefits
-1. **Independence of Frameworks**
-   - Business logic isn't tied to external libraries
-   - Easy to change mathematical computation tools
+\### Working with Layers
 
-2. **Testability**
-   - Business rules can be tested without frameworks
-   - Easy to mock dependencies
+\#### 1. Domain Layer
+- Create entities in `domain/entity`
+- Define value objects in `domain/valueobject`
+- Define domain events in `domain/event`
+- Define interfaces in `domain/port`
 
-3. **Maintainability**
-   - Clear separation of concerns
-   - Protected from external changes
+\#### 2. Application Layer
+- Implement use cases in `application/service`
+- Define DTOs in `application/dto`
+
+\#### 3. Infrastructure Layer
+- Implement repositories in `infrastructure/persistence`
+- Add configurations in `infrastructure/config`
+
+\#### 4. Presentation Layer
+- Add controllers in `presentation/api/rest/controller`
+- Define request/response models in respective packages
 
 \## 🧪 Testing
 
@@ -226,17 +229,23 @@ Response ← DTO    ← Repository
 # Run all tests
 ./gradlew test
 
-# Run specific layer tests
+# Run specific test category
 ./gradlew test --tests "com.cleanarchitecture.domain.*"
 ```
 
 \### Test Categories
-- Unit Tests: Framework-specific tests
-- Integration Tests: Cross-framework interactions
-- API Tests: Endpoint validation
+- Unit Tests: `src/test/java/.../domain/`
+- Integration Tests: `src/test/java/.../infrastructure/`
+- API Tests: `src/test/java/.../presentation/`
 
-\## 📚 References
+\## 🤝 Contributing
 
-- Farooq Khan et al. (2024) - AI Art Neural Constellation
-- Kushnareva et al. (2021) - Artificial Text Detection via Topology
-- Papia et al. (2023) - Entropy and Complexity Analysis
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Open a Pull Request
+
+\## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
