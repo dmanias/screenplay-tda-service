@@ -1,34 +1,12 @@
-\# Clean Architecture Template
+\# Clean Architecture Layers - TDA Service
 
-A Spring Boot project template following Clean Architecture principles.
+\## Overview
 
-\## 📋 Table of Contents
-- [Overview](#overview)
-- [Architecture](#architecture)
-- [Project Structure](#project-structure)
-- [Technologies](#technologies)
-- [Getting Started](#getting-started)
-- [API Documentation](#api-documentation)
-- [Development](#development)
-- [Testing](#testing)
-- [Contributing](#contributing)
-- [License](#license)
-
-\## 🎯 Overview
-
-This project is a template for building Spring Boot applications following Clean Architecture principles, focusing on separation of concerns and maintainability.
-
-\### Key Features
-- Clean Architecture implementation
-- Domain-Driven Design (DDD) principles
-- API documentation with OpenAPI (Swagger)
-- Comprehensive test coverage
-- Gradle build system
-- Java 23 support
-
-\## 🏗 Architecture
-
-The architecture follows Clean Architecture principles with dependencies pointing inward:
+Clean Architecture organizes code into concentric circles representing different layers of the application, where:
+- Inner circles contain business logic (domain)
+- Outer circles contain implementation details
+- Dependencies can only point inwards
+- Inner circles don't know about outer circles
 
 ```
 ┌──────────────────────────────────────┐
@@ -45,155 +23,204 @@ The architecture follows Clean Architecture principles with dependencies pointin
 └──────────────────────────────────────┘
 ```
 
-\### 1. Domain Layer (Enterprise Business Rules)
-- Location: `src/main/java/com/cleanarchitecture/domain`
-- Purpose: Contains core business logic and rules
-- Contains:
-   - Business entities
-   - Value objects
-   - Domain events
-   - Domain exceptions
-   - Port interfaces (for dependency inversion)
-      - Input ports (use case interfaces)
-      - Output ports (repository/service interfaces)
-   - Domain exceptions
+\## 1. Domain Layer (Enterprise Business Rules)
 
-\### 2. Application Layer (Application Business Rules)
-- Location: `src/main/java/com/cleanarchitecture/application`
-- Purpose: Orchestrates the flow of data and business rules
-- Contains:
-   - Use case implementations
-   - Application services
-   - DTOs for internal use
+\### Purpose
+- Contains the core business logic and rules
+- Independent of all external concerns
+- Represents the heart of the application
+- Defines contracts for external dependencies (ports)
 
-\### 3. Infrastructure Layer (Frameworks & Drivers)
-- Location: `src/main/java/com/cleanarchitecture/infrastructure`
-- Contains:
-   - Repository implementations
-   - External service integrations
-   - Security configurations
-   - Database configurations
-
-\### 4. Presentation Layer (Interface Adapters)
-- Location: `src/main/java/com/cleanarchitecture/presentation`
-- Contains:
-   - REST controllers
-   - Request/Response models
-   - API documentation
-   - Exception handlers
-
-\## 📁 Project Structure
-
+\### Components
 ```
-src/
-├── main/
-│   ├── java/
-│   │   └── com/
-│   │       └── cleanarchitecture/
-│   │           ├── domain/
-│   │           │   ├── entity/        # Business entities
-│   │           │   ├── valueobject/   # Immutable value objects
-│   │           │   ├── event/         # Domain events
-│   │           │   ├── port/          # Interfaces for external deps
-│   │           │   │   ├── input/     # Use case interfaces
-│   │           │   │   └── output/    # Repository/Service interfaces
-│   │           │   └── exception/     # Domain-specific exceptions
-│   │           ├── application/
-│   │           │   ├── service/       # Use case implementations
-│   │           │   └── dto/           # Data Transfer Objects
-│   │           ├── infrastructure/
-│   │           │   ├── persistence/   # Repository implementations
-│   │           │   ├── config/        # Framework configurations
-│   │           │   └── security/      # Security configurations
-│   │           └── presentation/
-│   │               └── api/
-│   │                   └── rest/
-│   │                       ├── controller/  # REST controllers
-│   │                       ├── request/     # Request DTOs
-│   │                       └── response/    # Response DTOs
-│   └── resources/
-│       ├── application.yml
-│       ├── application-dev.yml
-│       └── application-prod.yml
-└── test/
-    └── java/
-        └── com/
-            └── cleanarchitecture/
-                ├── domain/
-                ├── application/
-                ├── infrastructure/
-                └── presentation/
+domain/
+├── entity/          # Business entities
+│   ├── Screenplay.java
+│   ├── Scene.java
+│   └── Dialogue.java
+├── valueobject/     # Immutable value objects
+│   ├── TopologicalFeatures.java
+│   ├── PersistenceDiagram.java
+│   ├── PatternMetrics.java
+│   └── CreativeMetrics.java
+├── port/           # Interface definitions
+│   ├── input/      # Use case interfaces
+│   │   ├── ModalLogicPort.java
+│   │   ├── TopologicalAnalysisPort.java
+│   │   └── PatternAnalysisPort.java
+│   └── output/     # External dependency interfaces
+│       └── FeatureExtractionPort.java
+└── exception/      # Domain-specific exceptions
+    └── TDAAnalysisException.java
 ```
 
-\## 🛠 Technologies
+\### Key Characteristics
+- No dependencies on frameworks or external libraries
+- Pure Java code
+- Contains business logic validation
+- Houses business invariants
+- Defines all interfaces for external operations
 
-- **Core**:
-   - Java 23
-   - Spring Boot 3.3.5
-   - Gradle 8.x
+\### Example
+```java
+// Domain Entity
+public class Screenplay {
+    private final ScreenplayId id;
+    private List<Scene> scenes;
+    private ScreenplayMetrics metrics;
 
-- **Documentation**:
-   - SpringDoc OpenAPI UI 2.3.0
-   - Swagger UI
+    public void analyze() {
+        if (scenes.isEmpty()) {
+            throw new InvalidScreenplayException("Screenplay must have at least one scene");
+        }
+        // Domain logic for analysis
+    }
+}
 
-- **Persistence**:
-   - Spring Data JPA
-   - H2 Database (for development)
+// Domain Port (Input)
+public interface TopologicalAnalysisPort {
+    TopologicalFeatures extractFeatures(Screenplay screenplay);
+    PersistenceDiagram computePersistenceDiagram(Screenplay screenplay);
+}
 
-- **Tools**:
-   - MapStruct 1.5.5.Final (for object mapping)
-   - Lombok (for boilerplate reduction)
-   - JUnit 5 (for testing)
-
-\## 🚀 Getting Started
-
-\### Prerequisites
-- JDK 23
-- Gradle 8.x
-
-\### Building the Project
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/clean-architecture-template.git
-
-# Navigate to the project directory
-cd clean-architecture-template
-
-# Build the project
-./gradlew build
-
-# Run the application
-./gradlew bootRun
+// Domain Port (Output)
+public interface FeatureExtractionPort {
+    List<Double> extractGradientFeatures(Screenplay screenplay);
+    List<Double> extractConnectivityPatterns(Screenplay screenplay);
+}
 ```
 
-\### Configuration
-The application can be configured using the following files:
-- `application.yml`: Default configuration
-- `application-dev.yml`: Development configuration
-- `application-prod.yml`: Production configuration
+\## 2. Application Layer (Application Business Rules)
 
-\## 📖 API Documentation
+\### Purpose
+- Orchestrates the flow of data and business rules
+- Implements use cases defined in domain ports
+- Coordinates domain objects
 
-OpenAPI documentation is available at:
-- Swagger UI: http://localhost:8080/swagger-ui.html
-- API Docs: http://localhost:8080/api-docs
-
-\## 💻 Development
-
-\### Code Style
-This project uses:
-- EditorConfig for consistent coding style
-- Google Java Format
-- Checkstyle for code quality enforcement
-
-\### Mapper Generation
-MapStruct is used for object mapping. Mappers are generated during compilation:
-```bash
-./gradlew clean build
+\### Components
+```
+application/
+├── service/        # Use case implementations
+│   ├── ModalLogicService.java
+│   ├── TopologicalAnalysisService.java
+│   └── PatternAnalysisService.java
+└── dto/           # Data Transfer Objects
+    └── AnalysisResult.java
 ```
 
-\### Dependencies Flow
-The dependencies flow inward, following DIP:
+\### Key Characteristics
+- Depends only on the domain layer
+- Implements interfaces defined in domain ports
+- Contains no business rules
+- Coordinates domain objects
+
+\### Example
+```java
+@Service
+public class TopologicalAnalysisService implements TopologicalAnalysisPort {
+    private final FeatureExtractionPort featureExtractor;
+
+    @Override
+    public TopologicalFeatures extractFeatures(Screenplay screenplay) {
+        List<Double> gradientFeatures = featureExtractor.extractGradientFeatures(screenplay);
+        List<Double> connectivityPatterns = featureExtractor.extractConnectivityPatterns(screenplay);
+
+        return TopologicalFeatures.builder()
+                .gradientFeatures(gradientFeatures)
+                .connectivityPatterns(connectivityPatterns)
+                .build();
+    }
+}
+```
+
+\## 3. Infrastructure Layer (Frameworks & Drivers)
+
+\### Purpose
+- Implements interfaces defined in domain ports
+- Contains all external dependencies
+- Handles technical concerns
+
+\### Components
+```
+infrastructure/
+├── persistence/    # Implementation of domain ports
+│   └── JavaPlexFeatureExtraction.java
+└── config/        # Framework configurations
+    └── TDAConfig.java
+```
+
+\### Key Characteristics
+- Contains framework-specific code
+- Implements data persistence
+- Handles external service communication
+- Configures technical aspects
+
+\### Example
+```java
+@Service
+public class JavaPlexFeatureExtraction implements FeatureExtractionPort {
+    private final SimplexStreamBuilder simplexBuilder;
+
+    @Override
+    public List<Double> extractGradientFeatures(Screenplay screenplay) {
+        // JavaPlex-specific implementation
+        return computeFeatures(screenplay);
+    }
+
+    private List<Double> computeFeatures(Screenplay screenplay) {
+        // Implementation using JavaPlex library
+    }
+}
+```
+
+\## 4. Presentation Layer (Interface Adapters)
+
+\### Purpose
+- Handles HTTP requests/responses
+- Converts data between formats
+- Provides API endpoints
+- Manages user interface concerns
+
+\### Components
+```
+presentation/
+└── api/
+    └── rest/
+        ├── controller/  # REST controllers
+        │   └── TDAController.java
+        ├── request/     # Request DTOs
+        │   └── ScreenplayRequest.java
+        └── response/    # Response DTOs
+            └── AnalysisResponse.java
+```
+
+\### Key Characteristics
+- Contains controllers and presenters
+- Handles HTTP-specific logic
+- Manages request/response formats
+- Implements API documentation
+
+\### Example
+```java
+@RestController
+@RequestMapping("/api/v1/tda")
+public class TDAController {
+    private final TopologicalAnalysisPort topologicalAnalysisPort;
+
+    @PostMapping("/analyze")
+    public ResponseEntity<AnalysisResponse> analyzeScreenplay(
+            @Valid @RequestBody ScreenplayRequest request) {
+        Screenplay screenplay = screenplayMapper.toDomain(request);
+        TopologicalFeatures features = topologicalAnalysisPort.extractFeatures(screenplay);
+        return ResponseEntity.ok(AnalysisResponse.from(features));
+    }
+}
+```
+
+\## Dependencies Flow
+
+The dependencies flow inward, following the Dependency Inversion Principle:
+
 ```
 Controller → Domain Port ← Infrastructure Implementation
      ↓          ↓                 ↓
@@ -202,50 +229,31 @@ Controller → Domain Port ← Infrastructure Implementation
 Response ← DTO   ← Domain Port Interface
 ```
 
-\### Working with Layers
+\## Benefits
 
-\#### 1. Domain Layer
-- Create entities in `domain/entity`
-- Define value objects in `domain/valueobject`
-- Define domain events in `domain/event`
-- Define interfaces in `domain/port`
+1. **Independence of Mathematical Framework**
+  - Core analysis logic isn't tied to JavaPlex
+  - Easy to change mathematical computation tools
 
-\#### 2. Application Layer
-- Implement use cases in `application/service`
-- Define DTOs in `application/dto`
+2. **Testability**
+  - Business rules can be tested without frameworks
+  - Easy to mock TDA computations
 
-\#### 3. Infrastructure Layer
-- Implement repositories in `infrastructure/persistence`
-- Add configurations in `infrastructure/config`
+3. **Independence of Analysis Tools**
+  - Analysis logic can change without affecting business rules
+  - Multiple tools can implement same interfaces
 
-\#### 4. Presentation Layer
-- Add controllers in `presentation/api/rest/controller`
-- Define request/response models in respective packages
+4. **Maintainability**
+  - Clear separation of concerns
+  - Easy to locate and modify code
+  - Protected from external changes
 
-\## 🧪 Testing
+\## Mathematical Foundation Integration
 
-\### Running Tests
-```bash
-# Run all tests
-./gradlew test
+The clean architecture allows us to separate:
+1. Core TDA concepts (domain layer)
+2. Implementation of algorithms (infrastructure layer)
+3. Coordination of analysis (application layer)
+4. Presentation of results (presentation layer)
 
-# Run specific test category
-./gradlew test --tests "com.cleanarchitecture.domain.*"
-```
-
-\### Test Categories
-- Unit Tests: `src/test/java/.../domain/`
-- Integration Tests: `src/test/java/.../infrastructure/`
-- API Tests: `src/test/java/.../presentation/`
-
-\## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Open a Pull Request
-
-\## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+This separation ensures that mathematical foundations remain pure and unaffected by technical concerns.

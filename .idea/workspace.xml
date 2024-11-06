@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9471666-c581-4d51-b7ac-a6e672283e25" name="Changes" comment="Correcting architecture and documentation">
+    <list default="true" id="f9471666-c581-4d51-b7ac-a6e672283e25" name="Changes" comment="Fixing documentation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CleanArchitecture.md" beforeDir="false" afterPath="$PROJECT_DIR$/CleanArchitecture.md" afterDir="false" />
     </list>
@@ -84,7 +84,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/dimos/Desktop/Dev/screenplay-tda-service",
+    "last_opened_file_path": "/home/dimos/Desktop/Dev/clean-architecture-template",
     "settings.editor.selected.configurable": "vcs.Git"
   }
 }]]></component>
@@ -133,13 +133,22 @@
       <option name="project" value="LOCAL" />
       <updated>1730885794419</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Fixing documentation">
+      <option name="closed" value="true" />
+      <created>1730887300101</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1730887300101</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit. structure and readmes" />
     <MESSAGE value="Create entities" />
     <MESSAGE value="Correcting architecture and documentation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correcting architecture and documentation" />
+    <MESSAGE value="Fixing documentation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixing documentation" />
   </component>
 </project>
