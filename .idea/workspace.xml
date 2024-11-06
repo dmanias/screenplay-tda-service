@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9471666-c581-4d51-b7ac-a6e672283e25" name="Changes" comment="Fixing documentation">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/application/service/ModalLogicService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/port/input/ModalLogicPort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/port/input/PatternAnalysisPort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/port/input/TDAAnalysisPort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/port/input/TopologicalAnalysisPort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/valueobject/ValidationResult.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CleanArchitecture.md" beforeDir="false" afterPath="$PROJECT_DIR$/CleanArchitecture.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/application/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/valueobject/Email.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +45,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -141,7 +149,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730887300101</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Fixing documentation">
+      <option name="closed" value="true" />
+      <created>1730887560436</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1730887560436</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
