@@ -22,4 +22,3 @@ public class Point {
     @JoinColumn(name = "persistence_diagram_id")
     private PersistenceDiagram persistenceDiagram;
 }
-

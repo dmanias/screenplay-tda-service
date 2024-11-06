@@ -16,5 +16,3 @@ public class CreativeMetrics {
     private double humanFoundation;
     private double collaborationScore;
 }
-
-

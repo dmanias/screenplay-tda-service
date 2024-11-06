@@ -31,4 +31,7 @@ public class ScreenplayMetrics {
 
     @Embedded
     private PatternMetrics patternMetrics;
+
+    public ScreenplayMetrics(Screenplay screenplay, TopologicalFeatures features, PersistenceDiagram persistenceDiagram, CreativeMetrics creativeMetrics, PatternMetrics patternMetrics) {
+    }
 }

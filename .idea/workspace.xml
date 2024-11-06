@@ -4,16 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9471666-c581-4d51-b7ac-a6e672283e25" name="Changes" comment="Fixing documentation">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/application/service/ModalLogicService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/port/input/ModalLogicPort.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/port/input/PatternAnalysisPort.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/port/input/TDAAnalysisPort.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/port/input/TopologicalAnalysisPort.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/valueobject/ValidationResult.java" afterDir="false" />
+    <list default="true" id="f9471666-c581-4d51-b7ac-a6e672283e25" name="Changes" comment="Create the ModalLogicService">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/application/service/PatternAnalysisService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/application/service/TDAAnalysisService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/application/service/TopologicalAnalysisService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/port/output/FeatureExtractionPort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/validation/BaseValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/application/service/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/valueobject/Email.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/application/dto/CreateUserCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/application/dto/UserDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/CreativeMetrics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/CreativeMetrics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/PatternMetrics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/PatternMetrics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/PersistenceDiagram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/PersistenceDiagram.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/ScreenplayMetrics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/ScreenplayMetrics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/TopologicalFeatures.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/TopologicalFeatures.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/exception/UserNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/port/input/CreateUserUseCase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/port/input/UseCase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/port/output/EventPublisher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/port/output/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/infrastructure/messaging/SpringEventsPublisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/infrastructure/messaging/SpringEventsPublisher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/infrastructure/persistence/repository/UserRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/infrastructure/persistence/repository/UserRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/presentation/api/rest/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/presentation/api/rest/controller/UserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,15 +100,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/dimos/Desktop/Dev/clean-architecture-template",
-    "settings.editor.selected.configurable": "vcs.Git"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/dimos/Desktop/Dev/clean-architecture-template&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.cleanarchitecture.domain.entity" />
@@ -157,7 +170,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730887560436</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Create the ModalLogicService">
+      <option name="closed" value="true" />
+      <created>1730898437611</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1730898437611</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -165,6 +186,7 @@
     <MESSAGE value="Create entities" />
     <MESSAGE value="Correcting architecture and documentation" />
     <MESSAGE value="Fixing documentation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixing documentation" />
+    <MESSAGE value="Create the ModalLogicService" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create the ModalLogicService" />
   </component>
 </project>

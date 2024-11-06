@@ -1,7 +1,6 @@
 package com.cleanarchitecture.infrastructure.messaging;
 
 
-import com.cleanarchitecture.domain.port.output.EventPublisher;
 import com.cleanarchitecture.domain.event.DomainEvent;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.ApplicationEventPublisher;
