@@ -4,51 +4,43 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9471666-c581-4d51-b7ac-a6e672283e25" name="Changes" comment="add validation, change readme and remove CleanArchitecture.md">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/port/output/BaseRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/port/output/ScreenplayRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/valueobject/TopologicalFeatures.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/cleanarchitecture/application/service/ModalLogicServiceIntegrationTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/cleanarchitecture/application/service/ModalLogicServiceUnitTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/cleanarchitecture/application/service/PatternAnalysisServiceIntegrationTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/cleanarchitecture/application/service/PatternAnalysisServiceUnitTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/cleanarchitecture/application/service/TDAAnalysisServiceIntegrationTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/cleanarchitecture/application/service/TDAAnalysisServiceUnitTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/cleanarchitecture/application/service/TopologicalAnalysisService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/cleanarchitecture/application/service/TopologicalAnalysisServiceUnitTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/cleanarchitecture/config/TestConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/cleanarchitecture/domain/entity/DialogueTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/cleanarchitecture/domain/entity/SceneTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/cleanarchitecture/domain/entity/ScreenplayTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/application-test.yml" afterDir="false" />
+    <list default="true" id="f9471666-c581-4d51-b7ac-a6e672283e25" name="Changes" comment="working with entities and persistence level.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/infrastructure/persistence/embeddable/CreativeMetricsEmbeddable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/infrastructure/persistence/embeddable/PatternMetricsEmbeddable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/infrastructure/persistence/embeddable/TopologicalFeaturesEmbeddable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/infrastructure/persistence/entity/DialogueJpaEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/infrastructure/persistence/entity/PersistenceDiagramJpaEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/infrastructure/persistence/entity/PointJpaEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/infrastructure/persistence/entity/SceneJpaEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/infrastructure/persistence/entity/ScreenplayJpaEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/infrastructure/persistence/entity/ScreenplayMetricsJpaEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/application/service/ModalLogicService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/application/service/ModalLogicService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/application/service/PatternAnalysisService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/application/service/PatternAnalysisService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/application/service/TDAAnalysisService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/application/service/TDAAnalysisService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/application/service/TopologicalAnalysisService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/application/service/TopologicalAnalysisService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/CreativeMetrics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/valueobject/CreativeMetrics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/PatternMetrics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/valueobject/PatternMetrics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/Dialogue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/Dialogue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/PersistenceDiagram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/PersistenceDiagram.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/Scene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/Scene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/Screenplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/Screenplay.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/ScreenplayMetrics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/ScreenplayMetrics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/TopologicalFeatures.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/event/UserCreatedEvent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/port/input/PatternAnalysisPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/port/input/PatternAnalysisPort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/port/input/TopologicalAnalysisPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/port/input/TopologicalAnalysisPort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/port/output/FeatureExtractionPort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/exception/DomainException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/exception/DomainException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/valueobject/CreativeMetrics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/valueobject/CreativeMetrics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/valueobject/PatternMetrics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/valueobject/PatternMetrics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/valueobject/TopologicalFeatures.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/valueobject/TopologicalFeatures.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/valueobject/ValidationResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/valueobject/ValidationResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/infrastructure/messaging/SpringEventsPublisher.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/infrastructure/persistence/mapper/UserMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/infrastructure/persistence/repository/UserRepositoryImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/presentation/api/rest/controller/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/infrastructure/persistence/entity/UserJpaEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/infrastructure/persistence/repository/UserJpaRepository.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/cleanarchitecture/CleanArchitectureTemplateApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/cleanarchitecture/CleanArchitectureTemplateApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/cleanarchitecture/application/service/ModalLogicServiceIntegrationTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/cleanarchitecture/application/service/ModalLogicServiceUnitTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/cleanarchitecture/application/service/PatternAnalysisServiceIntegrationTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/cleanarchitecture/application/service/PatternAnalysisServiceUnitTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/cleanarchitecture/application/service/TDAAnalysisServiceIntegrationTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/cleanarchitecture/application/service/TDAAnalysisServiceUnitTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/cleanarchitecture/application/service/TopologicalAnalysisService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/cleanarchitecture/application/service/TopologicalAnalysisServiceUnitTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/cleanarchitecture/config/TestConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/cleanarchitecture/domain/entity/DialogueTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/cleanarchitecture/domain/entity/SceneTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/cleanarchitecture/domain/entity/ScreenplayTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -307,7 +299,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730920669579</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="working with entities and persistence level.">
+      <option name="closed" value="true" />
+      <created>1731088324614</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1731088324614</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -317,7 +317,8 @@
     <MESSAGE value="Fixing documentation" />
     <MESSAGE value="Create the ModalLogicService" />
     <MESSAGE value="add validation, change readme and remove CleanArchitecture.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="add validation, change readme and remove CleanArchitecture.md" />
+    <MESSAGE value="working with entities and persistence level." />
+    <option name="LAST_COMMIT_MESSAGE" value="working with entities and persistence level." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

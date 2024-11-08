@@ -1,6 +1,5 @@
 package com.cleanarchitecture;
 
-import com.cleanarchitecture.config.TestConfig;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

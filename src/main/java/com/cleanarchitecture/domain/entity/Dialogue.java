@@ -1,26 +1,21 @@
 package com.cleanarchitecture.domain.entity;
 
 
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.cleanarchitecture.domain.exception.DomainException;
+import lombok.Getter;
+import lombok.Setter;
 
-@Entity
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+@Getter
+@Setter
 public class Dialogue {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
-
     private String characterName;
     private String content;
-
-    @ManyToOne
-    @JoinColumn(name = "scene_id")
     private Scene scene;
 
+    public void validate() {
+        if (characterName == null || characterName.trim().isEmpty()) {
+            throw new DomainException("Character name cannot be empty");
+        }
+    }
 }

@@ -1,35 +1,26 @@
 package com.cleanarchitecture.domain.valueobject;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
+public record ValidationResult(
+        boolean potentialValid,
+        boolean foundationValid,
+        boolean collaborationValid,
+        boolean isValid
+) implements ValueObject {
 
-/**
- * @param potentialValid     ◇(A ∧ C) - possibility of AI creative output
- * @param foundationValid    □(H → ◇C) - necessity of human creative potential
- * @param collaborationValid ◇(A ∧ H ∧ C) - possibility of human-AI collaboration
- * @param isValid            Overall validation result
- */
-
-@Builder
-public record ValidationResult(boolean potentialValid, boolean foundationValid, boolean collaborationValid,
-                               boolean isValid) implements ValueObject {
-    // Factory methods for common results
+    // Static factory methods
     public static ValidationResult valid() {
-        return ValidationResult.builder()
-                .potentialValid(true)
-                .foundationValid(true)
-                .collaborationValid(true)
-                .isValid(true)
-                .build();
+        return new ValidationResult(true, true, true, true);
     }
 
     public static ValidationResult invalid(boolean potential, boolean foundation, boolean collaboration) {
-        return ValidationResult.builder()
-                .potentialValid(potential)
-                .foundationValid(foundation)
-                .collaborationValid(collaboration)
-                .isValid(false)
-                .build();
+        return new ValidationResult(potential, foundation, collaboration, false);
+    }
+
+    public boolean needsHumanIntervention() {
+        return !foundationValid || !collaborationValid;
+    }
+
+    public boolean needsAITuning() {
+        return !potentialValid;
     }
 }

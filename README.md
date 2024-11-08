@@ -76,19 +76,22 @@ application/
 ```
 infrastructure/
 └── persistence/
-    ├── entity/              # JPA entities (data models)
+    ├── entity/              # JPA entities
     │   ├── ScreenplayJpaEntity.java
     │   ├── SceneJpaEntity.java
-    │   └── DialogueJpaEntity.java
-    ├── mapper/              # Mappers between JPA entities and domain entities
-    │   ├── ScreenplayMapper.java
-    │   ├── SceneMapper.java
-    │   └── DialogueMapper.java
-    ├── repository/          # Spring Data JPA repositories and implementations
-    │   ├── jpa/            # Spring Data JPA repository interfaces
-    │   │   └── ScreenplayJpaRepository.java
-    │   └── impl/           # Implementation of domain repository interfaces
-    │       └── ScreenplayRepositoryImpl.java
+    │   ├── DialogueJpaEntity.java
+    │   ├── ScreenplayMetricsJpaEntity.java
+    │   ├── PersistenceDiagramJpaEntity.java
+    │   └── PointJpaEntity.java
+    ├── embeddable/          # JPA embeddables
+    │   ├── CreativeMetricsEmbeddable.java
+    │   ├── PatternMetricsEmbeddable.java
+    │   └── TopologicalFeaturesEmbeddable.java
+    ├── repository/          # Repository implementations
+    │   └── jpa/
+    │       └── ScreenplayJpaRepository.java
+    └── mapper/              # Mappers between JPA and domain
+        └── ScreenplayMapper.java
 ```
 
 ### 4. Presentation Layer (Interface Adapters)
