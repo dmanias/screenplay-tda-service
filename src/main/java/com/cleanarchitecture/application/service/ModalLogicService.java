@@ -1,6 +1,6 @@
 package com.cleanarchitecture.application.service;
 
-import com.cleanarchitecture.domain.entity.CreativeMetrics;
+import com.cleanarchitecture.domain.valueobject.CreativeMetrics;
 import com.cleanarchitecture.domain.port.input.ModalLogicPort;
 import com.cleanarchitecture.domain.entity.Screenplay;
 import com.cleanarchitecture.domain.valueobject.ValidationResult;

@@ -75,10 +75,20 @@ application/
 - Components:
 ```
 infrastructure/
-├── persistence/    # Implementation of domain ports
-│   └── JavaPlexFeatureExtraction.java
-└── config/        # Framework configurations
-    └── TDAConfig.java
+└── persistence/
+    ├── entity/              # JPA entities (data models)
+    │   ├── ScreenplayJpaEntity.java
+    │   ├── SceneJpaEntity.java
+    │   └── DialogueJpaEntity.java
+    ├── mapper/              # Mappers between JPA entities and domain entities
+    │   ├── ScreenplayMapper.java
+    │   ├── SceneMapper.java
+    │   └── DialogueMapper.java
+    ├── repository/          # Spring Data JPA repositories and implementations
+    │   ├── jpa/            # Spring Data JPA repository interfaces
+    │   │   └── ScreenplayJpaRepository.java
+    │   └── impl/           # Implementation of domain repository interfaces
+    │       └── ScreenplayRepositoryImpl.java
 ```
 
 ### 4. Presentation Layer (Interface Adapters)

@@ -4,15 +4,16 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 
-@Getter
-@Builder
-@AllArgsConstructor
-public class ValidationResult implements ValueObject{
-    private final boolean potentialValid;      // ◇(A ∧ C) - possibility of AI creative output
-    private final boolean foundationValid;     // □(H → ◇C) - necessity of human creative potential
-    private final boolean collaborationValid;  // ◇(A ∧ H ∧ C) - possibility of human-AI collaboration
-    private final boolean isValid;            // Overall validation result
+/**
+ * @param potentialValid     ◇(A ∧ C) - possibility of AI creative output
+ * @param foundationValid    □(H → ◇C) - necessity of human creative potential
+ * @param collaborationValid ◇(A ∧ H ∧ C) - possibility of human-AI collaboration
+ * @param isValid            Overall validation result
+ */
 
+@Builder
+public record ValidationResult(boolean potentialValid, boolean foundationValid, boolean collaborationValid,
+                               boolean isValid) implements ValueObject {
     // Factory methods for common results
     public static ValidationResult valid() {
         return ValidationResult.builder()

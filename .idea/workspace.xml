@@ -4,29 +4,51 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9471666-c581-4d51-b7ac-a6e672283e25" name="Changes" comment="Create the ModalLogicService">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/application/service/PatternAnalysisService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/application/service/TDAAnalysisService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/application/service/TopologicalAnalysisService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/port/output/FeatureExtractionPort.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/validation/BaseValidator.java" afterDir="false" />
+    <list default="true" id="f9471666-c581-4d51-b7ac-a6e672283e25" name="Changes" comment="add validation, change readme and remove CleanArchitecture.md">
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/port/output/BaseRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/port/output/ScreenplayRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/valueobject/TopologicalFeatures.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/cleanarchitecture/application/service/ModalLogicServiceIntegrationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/cleanarchitecture/application/service/ModalLogicServiceUnitTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/cleanarchitecture/application/service/PatternAnalysisServiceIntegrationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/cleanarchitecture/application/service/PatternAnalysisServiceUnitTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/cleanarchitecture/application/service/TDAAnalysisServiceIntegrationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/cleanarchitecture/application/service/TDAAnalysisServiceUnitTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/cleanarchitecture/application/service/TopologicalAnalysisService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/cleanarchitecture/application/service/TopologicalAnalysisServiceUnitTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/cleanarchitecture/config/TestConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/cleanarchitecture/domain/entity/DialogueTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/cleanarchitecture/domain/entity/SceneTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/cleanarchitecture/domain/entity/ScreenplayTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/application-test.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/application/dto/CreateUserCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/application/dto/UserDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/CreativeMetrics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/CreativeMetrics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/PatternMetrics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/PatternMetrics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/PersistenceDiagram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/PersistenceDiagram.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/application/service/ModalLogicService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/application/service/ModalLogicService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/application/service/PatternAnalysisService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/application/service/PatternAnalysisService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/application/service/TDAAnalysisService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/application/service/TDAAnalysisService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/application/service/TopologicalAnalysisService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/application/service/TopologicalAnalysisService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/CreativeMetrics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/valueobject/CreativeMetrics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/PatternMetrics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/valueobject/PatternMetrics.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/ScreenplayMetrics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/ScreenplayMetrics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/TopologicalFeatures.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/TopologicalFeatures.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/exception/UserNotFoundException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/port/input/CreateUserUseCase.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/port/input/UseCase.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/port/output/EventPublisher.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/port/output/UserRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/infrastructure/messaging/SpringEventsPublisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/infrastructure/messaging/SpringEventsPublisher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/infrastructure/persistence/repository/UserRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/infrastructure/persistence/repository/UserRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/presentation/api/rest/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/presentation/api/rest/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/entity/TopologicalFeatures.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/event/UserCreatedEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/port/input/PatternAnalysisPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/port/input/PatternAnalysisPort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/port/input/TopologicalAnalysisPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/port/input/TopologicalAnalysisPort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/port/output/FeatureExtractionPort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/valueobject/ValidationResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/domain/valueobject/ValidationResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/infrastructure/messaging/SpringEventsPublisher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/infrastructure/persistence/mapper/UserMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/infrastructure/persistence/repository/UserRepositoryImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/presentation/api/rest/controller/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/cleanarchitecture/CleanArchitectureTemplateApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/cleanarchitecture/CleanArchitectureTemplateApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +81,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="JUnit5 Test Class" />
         <option value="Class" />
       </list>
     </option>
@@ -102,10 +125,17 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Gradle.ModalLogicServiceIntegrationTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ModalLogicServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ScreenplayTest.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/home/dimos/Desktop/Dev/clean-architecture-template&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/home/dimos/Desktop/Dev/screenplay-tda-service/src/test/resources/src/main/java/org/example/Main.java&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
   }
 }</component>
@@ -120,6 +150,97 @@
       <recent name="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/infrastructure/persistence" />
       <recent name="$PROJECT_DIR$/src/main/java/com/cleanarchitecture/infrastructure" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/java/com/cleanarchitecture/application/service" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.cleanarchitecture.domain.entity" />
+      <recent name="com.cleanarchitecture.application.service" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle.ScreenplayTest">
+    <configuration name="ModalLogicServiceIntegrationTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.cleanarchitecture.application.service.ModalLogicServiceIntegrationTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="ModalLogicServiceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.cleanarchitecture.application.service.ModalLogicServiceTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="ScreenplayTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.cleanarchitecture.domain.entity.ScreenplayTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.ScreenplayTest" />
+        <item itemvalue="Gradle.ModalLogicServiceIntegrationTest" />
+        <item itemvalue="Gradle.ModalLogicServiceTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -178,7 +299,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730898437611</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add validation, change readme and remove CleanArchitecture.md">
+      <option name="closed" value="true" />
+      <created>1730920669579</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1730920669579</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -187,6 +316,18 @@
     <MESSAGE value="Correcting architecture and documentation" />
     <MESSAGE value="Fixing documentation" />
     <MESSAGE value="Create the ModalLogicService" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create the ModalLogicService" />
+    <MESSAGE value="add validation, change readme and remove CleanArchitecture.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="add validation, change readme and remove CleanArchitecture.md" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/resources/src/main/java/org/example/Main.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

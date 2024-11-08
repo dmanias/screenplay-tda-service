@@ -1,86 +1,70 @@
 package com.cleanarchitecture.application.service;
 
-import com.cleanarchitecture.domain.entity.PatternMetrics;
 import com.cleanarchitecture.domain.entity.PersistenceDiagram;
-import com.cleanarchitecture.domain.entity.TopologicalFeatures;
+import com.cleanarchitecture.domain.valueobject.TopologicalFeatures;
 import com.cleanarchitecture.domain.port.input.PatternAnalysisPort;
-
+import com.cleanarchitecture.domain.valueobject.PatternMetrics;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.Arrays;
 
 @Service
 @RequiredArgsConstructor
-
-
 public class PatternAnalysisService implements PatternAnalysisPort {
 
-    private static final double HUMAN_PATTERN_THRESHOLD = 0.7;
-    private static final double AI_PATTERN_THRESHOLD = 0.7;
+    private static final double MAX_WASSERSTEIN_DISTANCE = 1.0;
 
     @Override
-    public PatternMetrics analyzePatterns(TopologicalFeatures topologicalFeatures,
-                                          PersistenceDiagram persistenceDiagram) {
-        double humanPatternScore = calculateHumanPatternScore(topologicalFeatures, persistenceDiagram);
-        double aiPatternScore = calculateAIPatternScore(topologicalFeatures, persistenceDiagram);
-        double hybridScore = calculateHybridScore(humanPatternScore, aiPatternScore);
+    public PatternMetrics analyzePatterns(TopologicalFeatures features, PersistenceDiagram diagram) {
+        double humanScore = calculateHumanPatternScore(features);
+        double aiScore = calculateAIPatternScore(features, diagram);
+        double hybridScore = calculateHybridScore(humanScore, aiScore);
 
         return PatternMetrics.builder()
-                .humanPatternScore(humanPatternScore)
-                .aiPatternScore(aiPatternScore)
+                .humanPatternScore(humanScore)
+                .aiPatternScore(aiScore)
                 .hybridScore(hybridScore)
                 .build();
     }
 
-    private double calculateHumanPatternScore(TopologicalFeatures features,
-                                              PersistenceDiagram diagram) {
-        // Calculation based on:
-        // 1. Topological complexity (from features)
-        double complexityScore = calculateComplexityScore(features);
+    private double calculateHumanPatternScore(TopologicalFeatures features) {
+        // Human patterns typically show higher complexity and variation
+        double complexity = features.getComplexityMeasure();
+        double coherence = features.getCoherenceScore();
+        double variation = calculateVariation(features.getGradientFeatures());
 
-        // 2. Betti numbers variance (from diagram)
-        double bettiVariance = calculateBettiVariance(diagram.getBettiNumbers());
-
-        // Human patterns typically show higher complexity and variance
-        return (complexityScore + bettiVariance) / 2;
+        // Weight the factors
+        return (complexity * 0.4 + coherence * 0.3 + variation * 0.3);
     }
 
-    private double calculateAIPatternScore(TopologicalFeatures features,
-                                           PersistenceDiagram diagram) {
-        // Calculation based on:
-        // 1. Pattern regularity (from features)
-        double regularityScore = calculateRegularityScore(features);
+    private double calculateAIPatternScore(TopologicalFeatures features, PersistenceDiagram diagram) {
+        // AI patterns typically show more regularity and lower Wasserstein distance
+        double regularity = 1.0 - calculateVariation(features.getConnectivityPatterns());
+        double wassersteinFactor = 1.0 - (diagram.getWassersteinDistance() / MAX_WASSERSTEIN_DISTANCE);
 
-        // 2. Wasserstein distance (from diagram)
-        double wassersteinScore = normalizeWassersteinDistance(diagram.getWassersteinDistance());
-
-        // AI patterns typically show more regularity
-        return (regularityScore + wassersteinScore) / 2;
+        // Weight the factors
+        return (regularity * 0.6 + wassersteinFactor * 0.4);
     }
 
     private double calculateHybridScore(double humanScore, double aiScore) {
-        // Hybrid score is higher when both human and AI scores are balanced
-        return Math.min(humanScore, aiScore) * 2;
+        // Geometric mean for balanced scoring
+        return Math.sqrt(humanScore * aiScore);
     }
 
-    private double calculateComplexityScore(TopologicalFeatures features) {
-        // Complexity analysis based on gradient features and connectivity patterns
-        return 0.0; // Placeholder
+    private double calculateVariation(double[] features) {
+        if (features == null || features.length == 0) {
+            return 0.0;
+        }
+        double mean = Arrays.stream(features).average().orElse(0.0);
+        double variance = Arrays.stream(features)
+                .map(f -> Math.pow(f - mean, 2))
+                .average()
+                .orElse(0.0);
+        return Math.sqrt(variance);
     }
 
-    private double calculateBettiVariance(List<Double> bettiNumbers) {
-        // Calculate variance in Betti numbers
-        return 0.0; // Placeholder
-    }
-
-    private double calculateRegularityScore(TopologicalFeatures features) {
-        // Analyze pattern regularity from features
-        return 0.0; // Placeholder
-    }
-
-    private double normalizeWassersteinDistance(double distance) {
-        // Normalize Wasserstein distance to 0-1 range
-        return 0.0; // Placeholder
+    private double normalizeScore(double score) {
+        return Math.min(1.0, Math.max(0.0, score));
     }
 }

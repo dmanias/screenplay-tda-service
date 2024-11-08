@@ -1,6 +1,9 @@
 package com.cleanarchitecture.domain.entity;
 
 
+import com.cleanarchitecture.domain.valueobject.PatternMetrics;
+import com.cleanarchitecture.domain.valueobject.CreativeMetrics;
+import com.cleanarchitecture.domain.valueobject.TopologicalFeatures;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

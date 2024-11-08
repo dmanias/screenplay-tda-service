@@ -2,7 +2,7 @@ package com.cleanarchitecture.domain.port.input;
 
 import com.cleanarchitecture.domain.entity.PersistenceDiagram;
 import com.cleanarchitecture.domain.entity.Screenplay;
-import com.cleanarchitecture.domain.entity.TopologicalFeatures;
+import com.cleanarchitecture.domain.valueobject.TopologicalFeatures;
 
 public interface TopologicalAnalysisPort {
     TopologicalFeatures extractFeatures(Screenplay screenplay);

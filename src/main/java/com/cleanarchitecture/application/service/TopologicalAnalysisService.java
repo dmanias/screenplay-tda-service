@@ -2,9 +2,8 @@ package com.cleanarchitecture.application.service;
 
 import com.cleanarchitecture.domain.entity.PersistenceDiagram;
 import com.cleanarchitecture.domain.entity.Point;
-import com.cleanarchitecture.domain.entity.TopologicalFeatures;
+import com.cleanarchitecture.domain.valueobject.TopologicalFeatures;
 import com.cleanarchitecture.domain.port.input.TopologicalAnalysisPort;
-import com.cleanarchitecture.domain.port.output.FeatureExtractionPort;
 import com.cleanarchitecture.domain.entity.Screenplay;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

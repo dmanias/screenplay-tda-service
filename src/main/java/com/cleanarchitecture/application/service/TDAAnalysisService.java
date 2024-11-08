@@ -4,6 +4,7 @@ package com.cleanarchitecture.application.service;
 import com.cleanarchitecture.domain.entity.Screenplay;
 import com.cleanarchitecture.domain.entity.ScreenplayMetrics;
 import com.cleanarchitecture.domain.port.input.TDAAnalysisPort;
+import com.cleanarchitecture.domain.validation.BaseValidator;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -11,12 +12,17 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class TDAAnalysisService implements TDAAnalysisPort {
 
+    private final BaseValidator<Screenplay> baseValidator;
     private final ModalLogicService modalLogicService;
     private final TopologicalAnalysisService topologicalAnalysisService;
     private final PatternAnalysisService patternAnalysisService;
 
     @Override
     public ScreenplayMetrics analyzeScreenplay(Screenplay screenplay) {
+
+        // Validate screenplay
+        baseValidator.validate(screenplay);
+
         // 1. Modal Logic Framework validation
         var validationResult = modalLogicService.validateCreativeProcess(screenplay);
 

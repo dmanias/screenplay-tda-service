@@ -1,4 +1,4 @@
-package com.cleanarchitecture.domain.entity;
+package com.cleanarchitecture.domain.valueobject;
 
 
 import jakarta.persistence.Embeddable;
