@@ -19,5 +19,5 @@ public class DialogueJpaEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "scene_id")
-    private SceneJpaEntity sceneJpaEntity;
+    private SceneJpaEntity sceneJpaEntity;  // This is the correct field name
 }

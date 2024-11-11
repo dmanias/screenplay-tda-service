@@ -13,34 +13,22 @@ public class ModalLogicService implements ModalLogicPort {
 
     @Override
     public ValidationResult validateCreativeProcess(Screenplay screenplay) {
-        CreativeMetrics metrics = screenplay.getScreenplayMetrics().getCreativeMetrics();
+        CreativeMetrics metrics = screenplay.getMetrics().getCreativeMetrics();
 
-        // Validates three modal logic axioms:
         // 1. Creative Potential: ◇(A ∧ C)
-        boolean potentialValid = validateCreativePotential(metrics);
+        // Validates the possibility of AI creative output
+        boolean potentialValid = metrics.isValidAIContribution();
 
         // 2. Human Foundation: □(H → ◇C)
-        boolean foundationValid = validateHumanFoundation(metrics);
+        // Validates the necessity of human creative potential
+        boolean foundationValid = metrics.isValidHumanContribution();
 
         // 3. Collaborative Creation: ◇(A ∧ H ∧ C)
-        boolean collaborationValid = validateCollaboration(metrics);
+        // Validates the possibility of human-AI collaboration
+        boolean collaborationValid = metrics.hasEffectiveCollaboration();
 
-        if (potentialValid && foundationValid && collaborationValid) {
-            return ValidationResult.valid();
-        } else {
-            return ValidationResult.invalid(potentialValid, foundationValid, collaborationValid);
-        }
-    }
-
-    private boolean validateCreativePotential(CreativeMetrics metrics) {
-        return metrics.getAiCreativePotential() > 0.5;
-    }
-
-    private boolean validateHumanFoundation(CreativeMetrics metrics) {
-        return metrics.getHumanFoundation() > 0.4;
-    }
-
-    private boolean validateCollaboration(CreativeMetrics metrics) {
-        return metrics.getCollaborationScore() > 0.7;
+        return potentialValid && foundationValid && collaborationValid ?
+                ValidationResult.valid() :
+                ValidationResult.invalid(potentialValid, foundationValid, collaborationValid);
     }
 }

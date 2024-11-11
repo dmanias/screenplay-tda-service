@@ -21,10 +21,8 @@ public class SceneJpaEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "screenplay_id")
-    private ScreenplayJpaEntity screenplayJpaEntity;
+    private ScreenplayJpaEntity screenplay;
 
     @OneToMany(mappedBy = "scene", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<DialogueJpaEntity> dialogueJpaEntityList = new ArrayList<>();
-
-
+    private List<DialogueJpaEntity> dialogues = new ArrayList<>();
 }

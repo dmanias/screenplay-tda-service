@@ -23,6 +23,10 @@ public class ScreenplayJpaEntity {
     @Column(length = 1000)
     private String premise;
 
+    // Bidirectional relationship with metrics
+    @OneToOne(mappedBy = "screenplay", cascade = CascadeType.ALL)
+    private ScreenplayMetricsJpaEntity metrics;
+
     @OneToMany(mappedBy = "screenplay", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<SceneJpaEntity> scenes = new ArrayList<>();
 
